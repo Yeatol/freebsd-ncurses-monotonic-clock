@@ -1,0 +1,12 @@
+diff --git a/contrib/ncurses/ncurses/curses.priv.h b/contrib/ncurses/ncurses/curses.priv.h
+--- a/contrib/ncurses/ncurses/curses.priv.h
++++ b/contrib/ncurses/ncurses/curses.priv.h
+@@ -794,4 +794,8 @@
+ #if HAVE_CLOCK_GETTIME
+ # define PRECISE_GETTIME 1
++# if defined(CLOCK_MONOTONIC)
++#  define GetClockTime(t) clock_gettime(CLOCK_MONOTONIC, t)
++# else
+ # define GetClockTime(t) clock_gettime(CLOCK_REALTIME, t)
++# endif
+ # define TimeType struct timespec

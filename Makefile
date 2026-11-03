@@ -1,5 +1,5 @@
-PROG_CXX=	curses_test
-SRCS=		main.cpp
+PROG_CXX=	ncurses-monotonic-clock
+SRCS=		ncurses-monotonic-clock.cpp
 MAN=
 
 CXXSTD=		c++23
